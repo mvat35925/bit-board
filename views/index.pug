@@ -4,6 +4,12 @@ block content
   if member 
     script.
       let currentMember = !{JSON.stringify(member)};
+      if(currentMember.short_info) {
+        console.log("A");
+        const welcome = document.querySelector('.welcomeTxt.welcome-animation');
+        welcome.textContent = currentMember.short_info;
+      } 
+  
     div.comment
       div.commentProfile
         img(src="/profile/"+member.member_ID+".jpeg" class="profilePic")  
@@ -29,8 +35,4 @@ block content
                 button() DELETE 
   
   script.
-    if(currentMember.short_info) {
-      const welcome = document.querySelector('.welcomeTxt.welcome-animation');
-      welcome = currentMember.short_info;
-    } 
-  
+    

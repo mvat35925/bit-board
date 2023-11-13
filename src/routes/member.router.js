@@ -10,7 +10,6 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname, '../../public/profile')); 
   },
   filename: function (req, file, cb) {
-    // cb(null, req.session.uid + path.extname(file.originalname));
     console.log(req.session.uid)
     cb(null, req.session.uid+".jpeg");
 
