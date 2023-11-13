@@ -1,0 +1,30 @@
+extends layout 
+
+block content 
+  div(class="login-containerr")
+    div(class="login-container")
+      h2 Login 
+      form(action="" method="POST")
+        if messages.error 
+          div(class="input-container error")
+            input(type="text" name="username" placeholder="username" require="true" id="username" class="error")
+          div(class="input-container error")
+            input(type="password" name="password" placeholder="password" require="true")
+          button.btn(type='submit') Login
+        else
+          div(class="input-container")
+            input(type="text" name="username" placeholder="username" require="true")
+          div(class="input-container")
+            input(type="password" name="password" placeholder="password" require="true")
+          button.btn(type='submit') Login
+      if messages.error 
+        p.errormsg  #{messages.error}
+
+  script.
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password")
+    usernameInput.addEventListener("focus",function() {
+      usernameInput.classList.remove("error");
+    })
+
+ 

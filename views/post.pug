@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+  div.postClass
+    div.postMember 
+      img(src="/profile/"+post.member_ID+".jpeg" class="profilePic")  
+      a(href="/members/"+post.member_ID) #{post.username}
+    div.postElem
+      h1.postTitle #{post.post_title}
+      div.postContent #{post.content}
+  div.commentsClass
+    .addCommentClass 
+      .smallerTxt Comment as #{user.username}
+      form.addCommentForm(action=post.post_ID + "/comments" method="POST")
+        .form-group
+          textarea#commentTextarea(name="content", cols="30", rows="10")
+          button(type="submit") Comment
+    if comments
+      each comment in comments
+        div.comment
+          div.commentProfile
+            img(src="/profile/"+comment.member_ID+".jpeg" class="profilePic")  
+            a(href="/members/"+comment.member_ID).commentUsername #{comment.username}
+          p.commentContent #{comment.content}
+          p.commentTime #{comment.doc}

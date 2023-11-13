@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  if member 
+    script.
+      let currentMember = !{JSON.stringify(member)};
+    div.comment
+      div.commentProfile
+        img(src="/profile/"+member.member_ID+".jpeg" class="profilePic")  
+        a(href="/members/"+member.member_ID).commentUsername #{member.username}
+  if posts 
+    .posts
+      for post in posts  
+        .post
+          a.post-link(href="/posts/"+post.post_ID)
+            h1.post-title Title: #{post.post_title}
+          if post.tags && post.tags.length
+            .dropdown
+              button.dropdown-button Tags
+              .dropdown-content
+                each tag in post.tags
+                  a(href="/tags/"+tag.id) #{tag.name}
+          a(href="/members/"+post.member_ID class="username") user: #{post.username}
+          p(id="time")= post.dop
+          
+          if user && user.isAdmin
+            div.delete(style="float: right;")
+              form(action="/posts/"+post.post_ID+"/delete" method="POST" )
+                button() DELETE 
+  
+  script.
+    if(currentMember.short_info) {
+      const welcome = document.querySelector('.welcomeTxt.welcome-animation');
+      welcome = currentMember.short_info;
+    } 
+  

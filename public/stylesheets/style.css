@@ -1,0 +1,650 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0px;
+  overflow-x: hidden;
+
+}
+
+.header {
+  padding: 10px;
+  display: flex;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+}
+
+.link a {
+  background-color: skyblue;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.welcome {
+  background-color: beige;
+  border-bottom: 1px black solid;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.welcomeTxt {
+  width: 100%;
+  max-height: 100%;
+}
+
+.welcome-animation {
+  animation: textRun 15s linear infinite;
+}
+
+@keyframes textRun {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.profilePic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px black solid
+}
+
+.login-container {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.error input[type="text"],
+.error input[type="password"] {
+  border-color: #ff0000;
+}
+
+button.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+.errormsg {
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+.login-containerr {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post {
+  /* TODO */
+  border: 1px #D2B48C solid; 
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.post a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.post-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #888;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post-footer .upvote {
+  display: flex;
+  align-items: center;
+  color: #888;
+}
+
+.post-footer .upvote i {
+  margin-right: 5px;
+}
+
+.post-footer .comment-count {
+  color: #888;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Add box-sizing property */
+}
+
+/* Base styles for all screen sizes */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* Add a default font */
+}
+
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+}
+
+a {
+  text-decoration: none;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+}
+
+.link a {
+  background-color: skyblue;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.user-menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  max-width: 90vw;
+  /* Maximum width relative to the viewport width */
+  width: auto;
+  /* Adjust width based on content */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 80vh;
+}
+
+.user-menu:hover .dropdown-content {
+  display: block;
+}
+
+.user-menu .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.user-menu .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Your existing keyframes */
+@keyframes textRun {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+/* Responsive keyframes for smaller screens */
+@media (max-width: 768px) {
+  @keyframes textRun {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(50%);
+      /* Adjust the percentage based on your design */
+    }
+  }
+}
+
+/* Responsive keyframes for medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  @keyframes textRun {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+/* Responsive keyframes for larger screens */
+@media (min-width: 1025px) {
+  @keyframes textRun {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(150%);
+      /* Adjust the percentage based on your design */
+    }
+  }
+}
+
+
+/* Additional responsive styles can be added based on your specific requirements */
+
+.post {
+  margin-top: 15px;
+}
+
+.post * {
+  font-size: large;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust minmax values as needed */
+  gap: 15px;
+  padding: 20px;
+}
+
+.post {
+  padding: 10px;
+  height: 150px;
+  border: 2px solid grey;
+}
+
+a:visited {
+  color: black;
+  /* Visited link color */
+}
+
+
+
+.welcome {
+  /* height: 30vh; */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  background-color: white;
+}
+
+.welcomeTxt {
+  margin-top: 13px;
+  z-index: 0;
+}
+
+#over {
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+
+#profile,
+#placeholder-image,
+#image-preview {
+  width: 45px;
+  height: 45px;
+}
+
+#image-preview {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post {
+  position: relative;
+  /* Your existing styles for .post */
+}
+
+.greenTxt {
+  color: green
+}
+.dropdown {
+  position: absolute;
+  top: 10px;
+  /* Adjust as necessary */
+  right: 10px;
+  /* Adjust as necessary */
+  cursor: pointer;
+}
+
+.dropdown-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  top: 100%;
+  /* Positioned just below the button */
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.post {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /* other styling for post */
+}
+
+.post-link {
+  display: block;
+  color: inherit;
+  /* Make sure the color is consistent */
+  text-decoration: none;
+  /* Remove underline from all links */
+}
+
+.welcomeHeader {
+  width: 100vw;
+  height: 45px;
+  background-color: #D2B48C;
+  border: 1px black solid;
+}
+
+.filter {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 95px);
+  gap: 10px;
+  right: auto;
+}
+
+.postBox {
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+  margin-left: 10%;
+  margin-right: 5%;
+  background-color: white;
+}
+
+#title,
+#content {
+  width: 100%;
+}
+
+#content {
+  padding: 10px;
+}
+
+.dropdown.inputtt {
+  margin-top: 5px;
+  position: static;
+  width: 40px;
+  margin-left: 20px;
+  top: 5px;
+}
+
+.dropdown.inputtt:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content.inputtt {
+  left: 0;
+  top: 0;
+}
+
+.tagdd {
+  border: 1px black solid;
+  padding: 2px;
+  height: 20px;
+}
+
+.dropdown.inputtt {
+  margin-top: 5px;
+  position: relative;
+  /* Changed from 'static' to 'relative' */
+  width: 40px;
+  margin-left: 20px;
+  top: 5px;
+  height: auto;
+
+}
+
+.dropdown-content.inputtt {
+  left: 0;
+  top: 100%;
+  /* Adjusted to make the dropdown appear below the input */
+  position: absolute;
+  /* Added 'position: absolute;' */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.postbtn {
+  margin-right: 20px;
+  /* Adjust the margin as necessary */
+  align-self: flex-end;
+  /* Align button to the bottom */
+}
+
+.inputc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+a.post-link:hover {
+  text-decoration: none;
+}
+
+.delete button{
+  padding: 5px 10px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  margin-top:35%;
+  color:white
+}
+.username:hover {
+  color: rgb(4, 64, 71); /* Set the color you want on hover */
+}
+
+#time {
+  font-size: smaller;
+  margin-top: 5px;
+}
+
+.postClass {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color:tan;
+}
+
+.postMember > a{
+  color:lightblue
+}
+.postMember {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.postElem {
+  padding-left: 40px;
+}
+.postContent {
+  padding-top: 20px;
+  padding-left: 2px;
+  font-size:larger;
+}
+
+.commentsClass {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: beige;
+}
+
+.commentUsernam,
+.commentTime {
+  font-size: smaller;
+}
+
+.commentContent {
+  font-size: larger;
+}
+.comment {
+  margin: 10px;
+  border: 1px black solid;
+  padding: 15px;
+}
+
+
+.commentProfile {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.addCommentClass {
+  margin: 10px;
+ 
+}
+
+.smallerTxt {
+  color: grey;
+  font-size:small ;
+}
+
+.button-wrapper {
+  right: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#commentTextarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#image-preview,
+#placeholder-image {
+  height: 45px; /* Equal to the width for a circle */
+  width: 45px;  /* Equal to the height for a circle */
+  border-radius: 50%;
+}

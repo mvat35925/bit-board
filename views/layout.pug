@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title= title
+    // Include the main stylesheet
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    // Include the Dino game stylesheet
+    link(rel='stylesheet', href='/stylesheets/dino.css')
+
+  body
+    div.header(style='display: flex; justify-content: space-between; align-items: center;')
+      h1 
+        a.bitBoard(href="/") B
+          span.greenTxt i
+          | tB
+          span.greenTxt o
+          | ard
+      if !user 
+        div.link
+          a(href="/login") login 
+          a(href="/members/register") signup
+      else 
+        .user-menu
+          a(href="/members/"+user.member_ID)
+            img(src="/profile/"+user.member_ID+".jpeg" class="profilePic")  
+          .dropdown-content
+            a(href="/members/"+user.member_ID+"/edit") edit
+            a(href="/logout") Logout
+    if !user
+      div.welcomeHeader
+        div.welcomeTxt.welcome-animation Welcome to Bitboard
+    else 
+      div.welcomeHeader
+        div.welcomeTxt.welcome-animation Welcome back #{user.username}
+
+    if !user
+      div.welcome
+        div.games
+          div.game
+            div#dino
+            div#cactus
+            div#over.nonlogin Game over
+            button(id="restartBtn" class="nonlogin" style="display: none;") Restart
+    else
+      div.welcome
+        div.filter
+          each tag in tags 
+            .grid-item 
+              a(href="/tags/"+tag.tag_ID)= tag.tag_name
+        div.game
+          div#dino
+          div#cactus  
+          div#over.login Game over
+          button(id="restartBtn" class="login" style="display: none;") Restart
+        div.postBox
+          form(action="/posts/new" method="POST" class="postform")
+            div(class="postInput-container")
+              input(type="text" id="title" name="title" placeholder="title" required=true)
+            div(class="postInput-container")
+              textarea(type="text" id="content" name="content" placeholder="content" required=true rows="8" cols="50")
+            div.inputc(style='display: flex; justify-content: space-between; align-items: center;')
+              .dropdown.inputtt
+                div.tagdd Tags
+                .dropdown-content.inputtt
+                  each tag in tags 
+                    label.taglb
+                      input(type="checkbox"  name="tags[]" value=tag.tag_ID)
+                      | #{tag.tag_name}
+              button(class="postbtn") POST
+
+
+    // Here you include your Dino game script
+    script(src='/javascripts/script.js')
+
+  // Rest of your Pug content
+  block content
