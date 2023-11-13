@@ -4,7 +4,7 @@ block content
   if member 
     script.
       let currentMember = !{JSON.stringify(member)};
-      if(currentMember.short_info) {
+      if(currentMember.short_info!="undefined") {
         console.log("A");
         const welcome = document.querySelector('.welcomeTxt.welcome-animation');
         welcome.textContent = currentMember.short_info;
