@@ -46,7 +46,7 @@ app.enable('trust proxy')
 app.use(
   session({
       name: "cookie-name",
-      resave: true,
+      resave: false,
       proxy: true,
       secret: 'secret',
       saveUninitialized: true,
